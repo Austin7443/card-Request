@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Home } from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Request from "./pages/Request";
+import { Box, Text } from "@chakra-ui/react";
+import Container from "./components/Container";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Box h={"100vh"} overflowY={"scroll"} w={"100%"} background={"white"}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/request-card" element={<Request />} />
+        </Routes>
+      </BrowserRouter>
+      <Container>
+        <Text
+          position={"absolute"}
+          textAlign={"end"}
+          bottom={"20px"}
+          px={["30px", "50px"]}
+          color={"black"}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Powered by MyEstate.ng
+        </Text>
+      </Container>
+    </Box>
   );
 }
 
