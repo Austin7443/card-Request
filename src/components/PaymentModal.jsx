@@ -14,12 +14,7 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import { COLORS } from "./colors";
 import { useState } from "react";
 
-export const PaymentModal = ({
-  requests,
-  totalAmount,
-  makePayment,
-  residentCode,
-}) => {
+export const PaymentModal = ({ requests, totalAmount, makePayment, tenantCode }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -31,12 +26,10 @@ export const PaymentModal = ({
   };
 
   const copyToClippBoard = () => {
-    navigator.clipboard
-      .writeText(`${residentCode}`)
-      .then(() => {
-        alert("Copied successfully");
-        onClose();
-      });
+    navigator.clipboard.writeText(`${tenantCode}`).then(() => {
+      alert("Copied successfully");
+      onClose();
+    });
   };
 
   return (
@@ -73,8 +66,12 @@ export const PaymentModal = ({
               <br />
               <Box>
                 <Text>Click on the resident code below to copy</Text>
-                <Text onClick={copyToClippBoard} fontSize={"18px"} color={COLORS.green}>
-                  {residentCode}
+                <Text
+                  onClick={copyToClippBoard}
+                  fontSize={"18px"}
+                  color={COLORS.green}
+                >
+                  {tenantCode}
                 </Text>
               </Box>
               <br />

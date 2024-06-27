@@ -41,6 +41,7 @@ export const Home = () => {
         data.result.data.tenant.length > 0
       ) {
         const tenant = data.result.data.tenant[0];
+        console.log(tenant, "tenant")
         setIsValidPhoneNumber(true);
         setResidentId(tenant._id);
         console.log(tenant._id, "tenant data", tenant);
