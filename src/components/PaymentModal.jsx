@@ -59,7 +59,7 @@ export const PaymentModal = ({ requests, totalAmount, makePayment, tenantCode })
               fontSize={"18px"}
               fontWeight={"semibold"}
             >
-              Kindly make payment of {totalAmount} with this account
+              Kindly make payment of N{totalAmount} with this account
               details...Use your resident code as the payment description for
               the transaction.
               <br />
