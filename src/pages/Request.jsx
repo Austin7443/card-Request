@@ -73,10 +73,10 @@ function Request({ onClose }) {
     if (!event.target.files) return;
 
     const file = event.target.files[0];
-    const acceptedImageTypes = ["image/jpeg", "image/png", "image/gif"];
+    const acceptedImageTypes = ["image/jpeg", "image/png", "image/jpg"];
 
     if (!acceptedImageTypes.includes(file.type)) {
-      alert("Please upload a valid image file (JPEG, PNG, GIF).");
+      alert("Please upload a valid image file (JPEG, PNG, JPG).");
       event.target.value = null; // Reset input
       return;
     }
@@ -363,7 +363,7 @@ function Request({ onClose }) {
                 disabled={!media}
                 bg={COLORS.green}
                 color={COLORS.white}
-                w={["30%", "30%", "100%", "100%"]}
+                w={["30%", "30%", "50%", "50%"]}
                 _hover={{ backgroundColor: `${COLORS.green}` }}
               >
                 Continue
@@ -377,7 +377,7 @@ function Request({ onClose }) {
                 color={COLORS.green}
                 border={`2px solid ${COLORS.green}`}
               >
-                Add Extra Request
+                Add Family Members
               </Button>
             </Stack>
           </Flex>
