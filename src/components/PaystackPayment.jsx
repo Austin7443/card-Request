@@ -43,7 +43,8 @@ const PaystackPayment = ({ requests, totalAmount, onSuccess }) => {
       console.log("Total Amount (in kobo):", totalAmount * 100);
 
       const handler = window.PaystackPop.setup({
-        key: "pk_live_cdba66bae7ec36948926292db9c7b06dcf3f0d22", // Replace with your Paystack public key
+        key: "pk_live_154cdde00eeb226bac92b9267598413bee766dcc", // Replace with your Paystack public key
+        // key: "pk_test_664bdbe1d71f09f11a4beba7f61ed26df6f16e60", // Replace with your Paystack public key
         email: formDataArray[0].get("email"),
         amount: totalAmount * 100, // Amount in kobo
         currency: "NGN",
